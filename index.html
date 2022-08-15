@@ -27,5 +27,29 @@
         }
     }
 
+    function game(){
+        let i = 0;
+        let playerScore = 0;
+        let computerScore = 0;
+        while(i < 5){
+            const playerSelection = prompt();
+            const computerSelection = getComputerChoice();
+            roundWinner = playRound(playerSelection, computerSelection)
+            if(roundWinner == `You Win`){
+                playerScore++;
+            }else if(roundWinner == `You Lose`){
+                computerScore++;
+            }
+            i++;
+        }
+
+        if(playerScore > computerScore){
+            console.log("You won the match!");
+        }else{
+            console.log("You lost the match!");
+        }
+    }
+
+    game();
 
 </script>
